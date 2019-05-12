@@ -71,30 +71,9 @@
                         </span>
                     </button>
                 </span>
-            </div>    <div class="app-header__content">
-                <div class="app-header-left">
-                    <!--
-                    <ul class="header-menu nav">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                Statistics
-                            </a>
-                        </li>
-                        <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-edit"></i>
-                                Projects
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li>
-                    </ul>        
-                    -->
+            </div>    
+            <div class="app-header__content">
+                <div class="app-header-left"> 
                 </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
@@ -116,26 +95,11 @@
                                             <a href="logout.jsp" class="dropdown-item">Cerrar sesión</a>
                                         </div>
                                     </div>
-                                </div>
-                                               <!--
-                                <div class="widget-content-left  ml-3 header-user-info">
-                                   
-                                  
-                                    <div class="widget-subheading">
-                                        VP People Manager
-                                    </div>
-                                     
-                                </div>
-                                    <!--
-                                <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
-                                </div>
-                                    -->
+                                </div> 
                             </div>
                         </div>
-                    </div>        </div>
+                    </div>
+                </div>
             </div>
         </div>        
       
@@ -183,9 +147,7 @@
                                         <i class="pe-7s-display1 icon-gradient bg-premium-dark">
                                         </i>
                                     </div>
-                                    <div>Crear curso
-                                        <div class="page-title-subheading">Wide selection of forms controls, using the Bootstrap 4 code base, but built with React.
-                                        </div>
+                                    <div>Crear curso 
                                     </div>
                                 </div> 
                             </div>
@@ -196,119 +158,18 @@
                                     <div class="col-md-12">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body"> 
-                                                <form class="" action="CrearCurso" method="POST">
+                                                <form class="" action="Cursos?tarea=CrearCurso" method="POST">
                                                     <div class="position-relative form-group">
                                                         <label class="">Nombre del curso</label>
                                                         <input name="nombre" id="exampleEmail" placeholder="Nombre del curso" type="text" class="form-control" required>
-                                                    </div>
-                                                    <!--
-                                                    <div class="position-relative form-group">
-                                                        <label for="examplePassword" class="">Fecha de </label>
-                                                        <input id="d"  type="date" readonly onclick="calender(this)">
-                                                    </div>
-                                                    
-                                                     
-                                                    <div class="position-relative form-group"><label for="exampleText" class="">Text Area</label><textarea name="text" id="exampleText" class="form-control"></textarea></div>
-                                                    -->
+                                                    </div> 
                                                     <button class="mt-1 btn btn-primary">Crear curso</button>
                                                 </form>
                                             </div>
                                         </div>
                                     </div> 
                                 </div>
-                            </div> 
-                            <div class="tab-pane tabs-animation fade" id="tab-content-2" role="tabpanel">
-                                <form class="">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="main-card mb-3 card">
-                                                <div class="card-body"><h5 class="card-title">Checkboxes</h5>
-                                                    <div class="position-relative form-group">
-                                                        <div>
-                                                            <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox">Check this
-                                                                custom checkbox</label></div>
-                                                            <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox2">Or this
-                                                                one</label></div>
-                                                            <div class="custom-checkbox custom-control"><input type="checkbox" id="exampleCustomCheckbox3" disabled="" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox3">But
-                                                                not this disabled one</label></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="main-card mb-3 card">
-                                                <div class="card-body"><h5 class="card-title">Inline</h5>
-                                                    <div class="position-relative form-group">
-                                                        <div>
-                                                            <div class="custom-checkbox custom-control custom-control-inline"><input type="checkbox" id="exampleCustomInline" class="custom-control-input"><label class="custom-control-label" for="exampleCustomInline">An inline custom
-                                                                input</label></div>
-                                                            <div class="custom-checkbox custom-control custom-control-inline"><input type="checkbox" id="exampleCustomInline2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomInline2">and another one</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="main-card mb-3 card">
-                                                <div class="card-body"><h5 class="card-title">Radios</h5>
-                                                    <div class="position-relative form-group">
-                                                        <div>
-                                                            <div class="custom-radio custom-control"><input type="radio" id="exampleCustomRadio" name="customRadio" class="custom-control-input"><label class="custom-control-label" for="exampleCustomRadio">Select
-                                                                this custom radio</label></div>
-                                                            <div class="custom-radio custom-control"><input type="radio" id="exampleCustomRadio2" name="customRadio" class="custom-control-input"><label class="custom-control-label" for="exampleCustomRadio2">Or
-                                                                this one</label></div>
-                                                            <div class="custom-radio custom-control"><input type="radio" id="exampleCustomRadio3" disabled="" class="custom-control-input"><label class="custom-control-label" for="exampleCustomRadio3">But not this
-                                                                disabled one</label></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="main-card mb-3 card">
-                                                <div class="card-body"><h5 class="card-title">Form Select</h5>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="position-relative form-group"><label for="exampleCustomSelect" class="">Custom Select</label><select type="select" id="exampleCustomSelect" name="customSelect" class="custom-select">
-                                                                <option value="">Select</option>
-                                                                <option>Value 1</option>
-                                                                <option>Value 2</option>
-                                                                <option>Value 3</option>
-                                                                <option>Value 4</option>
-                                                                <option>Value 5</option>
-                                                            </select></div>
-                                                            <div class="position-relative form-group"><label for="exampleCustomMutlipleSelect" class="">Custom Multiple Select</label><select multiple="" type="select" id="exampleCustomMutlipleSelect" name="customSelect" class="custom-select">
-                                                                <option value="">Select</option>
-                                                                <option>Value 1</option>
-                                                                <option>Value 2</option>
-                                                                <option>Value 3</option>
-                                                                <option>Value 4</option>
-                                                                <option>Value 5</option>
-                                                            </select></div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="position-relative form-group"><label for="exampleCustomSelectDisabled" class="">Custom Select Disabled</label><select type="select" id="exampleCustomSelectDisabled" name="customSelect" disabled="" class="custom-select">
-                                                                <option value="">Select</option>
-                                                                <option>Value 1</option>
-                                                                <option>Value 2</option>
-                                                                <option>Value 3</option>
-                                                                <option>Value 4</option>
-                                                                <option>Value 5</option>
-                                                            </select></div>
-                                                            <div class="position-relative form-group"><label for="exampleCustomMutlipleSelectDisabled" class="">Custom Multiple Select Disabled</label><select multiple="" type="select" id="exampleCustomMutlipleSelectDisabled" name="customSelect" disabled="" class="custom-select">
-                                                                <option value="">Select</option>
-                                                                <option>Value 1</option>
-                                                                <option>Value 2</option>
-                                                                <option>Value 3</option>
-                                                                <option>Value 4</option>
-                                                                <option>Value 5</option>
-                                                            </select></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </div>

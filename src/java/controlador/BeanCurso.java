@@ -3,6 +3,7 @@ public class BeanCurso {
     int cursoid,userid;
     String fechahora;
     String nombre;
+    String nombreDocente;
 
     public BeanCurso() {
     }
@@ -20,6 +21,22 @@ public class BeanCurso {
         this.nombre = nombre;
     }
 
+    public BeanCurso(int cursoid, int userid, String fechahora, String nombre, String nombreDocente) {
+        this.cursoid = cursoid;
+        this.userid = userid;
+        this.fechahora = fechahora;
+        this.nombre = nombre;
+        this.nombreDocente = nombreDocente;
+    }
+    
+    public String getNombreDocente() {
+        return nombreDocente;
+    }
+
+    public void setNombreDocente(String nombreDocente) {
+        this.nombreDocente = nombreDocente;
+    }
+    
     public int getCursoid() {
         return cursoid;
     }

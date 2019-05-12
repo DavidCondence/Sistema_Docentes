@@ -35,7 +35,9 @@
  if(session.getAttribute("email")==null || session.getAttribute("email")==" ") //check condition unauthorize user not direct access welcome.jsp page
  {
    response.sendRedirect("index.jsp"); 
- } 
+   
+ }  
+ 
  %>
  <c:if test="${sessionScope.admin != true}">
      <c:redirect url = "index.jsp"/>
@@ -176,7 +178,12 @@
                 </div>    
                 <div class="app-main__outer">
                     <div class="app-main__inner">
-                              
+                        <h3>
+                            
+                            <c:if test="${empty listaCursos}">
+                                No hay horarios en este curso.
+                            </c:if>  
+                        </h3>
                  
     
                         <input type="search" id="search" class="form-control" placeholder="Filtrar">
@@ -192,11 +199,14 @@
                     <c:forEach var="curso" items="${listaCursos}">
                     {
                         cursoid: '<c:out value="${curso.cursoid}"/>',
-                        userid: '<c:out value="${curso.userid}"/>',
+                        userid: '<c:out value="${curso.nombreDocente}"/>',
                         nombre: '<c:out value="${curso.nombre}"/>',
                         fechahora: '<c:out value="${curso.fechahora}"/>', 
-                        agregarhoras: 'www.google.com',
-                        url: 'www.google.com'
+                        agregarhoras: '<c:out value="${curso.cursoid}"/>',
+                        agregar_docente: '<c:out value="${curso.cursoid}"/>', 
+                        url: '<c:out value="${curso.cursoid}"/>',
+                        eliminar: '<c:out value="${curso.cursoid}"/>'
+                        
                     },    
                     </c:forEach>
 
@@ -204,11 +214,13 @@
 
                 var columns = {
                     'cursoid': 'CursoID',
-                    'userid': 'UserID',
+                    'userid': 'Usuario',
                     'nombre': 'Nombre curso',
                     'fechahora': 'Curso creado', 
                     'agregarhoras': 'Acciones',
-                    'url': ''
+                    'agregar_docente': '',
+                    'url': '',
+                    'eliminar': ''
                     
                 }
 
@@ -222,14 +234,17 @@
                     columns: TestData.columns,
                     dateParsing: true,
                     processHtml: function(row, key) {
-                        if (key === 'avatar_url') {
-                            return '<a href="' + row[key] + '" target="_blank">View Avatar</a>'
+                        if (key === 'agregar_docente') {
+                            return '<a href="Cursos?tarea=agregarDocentes&id=' + row[key] + '">Agregar docentes</a>'
                         }
                         if (key === 'url') {
-                            return '<a href="#" target="_blank">Eliminar</a>'
+                            return '<a href="Cursos?tarea=listaHorarios&cursoid=' + row[key] + '">Ver Horarios</a>'
+                        }
+                        if (key === 'eliminar') {
+                            return '<a href="Cursos?tarea=eliminarCurso&cursoid=' + row[key] + '">Eliminar</a>'
                         }
                         if (key === 'agregarhoras') {
-                            return '<a href="#" target="_blank">Agregar horarios</a>'
+                            return '<a href="crearhorario.jsp?id=' + row[key] + '">Agregar horarios</a>'
                         }
                         if (key === 'site_admin' && row[key]) {
                             return '<span class="btn btn-warning btn-sm">Admin</span>'

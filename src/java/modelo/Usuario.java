@@ -13,6 +13,8 @@ import dao.Conexion;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
      
@@ -75,26 +77,23 @@ public class Usuario {
         }  
         return false;
     }
-    public static PreparedStatement userLogin(BeanUsuario usuario) throws SQLException{
+    public static boolean userLogin(String email,String pass) throws SQLException{
         String query="SELECT * FROM Usuario WHERE Email=? AND Password=?"; 
         Conexion c=new Conexion();
         Connection con=c.getConexion();
+        boolean st =false;
         PreparedStatement ps=con.prepareStatement(query);
         try{  
-            ps.setString(1,usuario.getEmail());
-            ps.setString(2,usuario.getPassword());
-            ps.setString(3,usuario.getEmail());
-            ps.setBoolean(4,usuario.isAdmin()); 
+            ps.setString(1,email);
+            ps.setString(2,pass);  
 
             ResultSet rs=ps.executeQuery();
 
-            if(rs.next()){
-                return ps;
-            } 
+            st = rs.next();        
         } catch(Exception e){
              
         }  
-        return ps;
+        return st;
     }
     public static PreparedStatement obtenerUsuario(BeanUsuario usuario) throws SQLException{
         String query="SELECT * FROM Usuario WHERE Email=?"; 
@@ -116,5 +115,24 @@ public class Usuario {
              
         }  
         return ps;
+    }
+    public static List<BeanUsuario> listaUsuarios() throws SQLException { 
+        List<BeanUsuario> listaUuarios = new ArrayList<BeanUsuario>();
+        String sql = "SELECT * FROM USUARIO\n" +
+"    WHERE Admin = 0";
+        Conexion c=new Conexion();
+        Connection con=c.getConexion();
+        Statement statement = con.createStatement();
+        ResultSet resulSet = statement.executeQuery(sql);
+
+        while (resulSet.next()) { 
+            BeanUsuario usuario = new BeanUsuario(); 
+            usuario.setId(resulSet.getInt("UserID"));
+            usuario.setNombre(resulSet.getString("Nombre"));
+            usuario.setApellidos(resulSet.getString("Apellidos")); 
+            listaUuarios.add(usuario);
+        }
+        con.close();
+        return listaUuarios;
     }
 }

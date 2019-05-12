@@ -58,4 +58,18 @@ public class docentes {
         con.close();
         return listadocentes;
     }
+    public static int listaDocentesCount() throws SQLException {  
+        String sql = "SELECT count(*) FROM usuario";
+        int Cursos=0;
+        Conexion c=new Conexion();
+        Connection con=c.getConexion();
+        Statement statement = con.createStatement();
+        ResultSet resulSet = statement.executeQuery(sql);
+
+        while (resulSet.next()) { 
+            Cursos = resulSet.getInt(1);
+        }
+        con.close();
+        return Cursos;
+    }
 }

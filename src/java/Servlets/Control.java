@@ -30,10 +30,12 @@ public class Control extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession(); 
         // Obten de la solicitud, la tarea seleccionada del menú de canciones
         String tareaSel = request.getParameter("tarea");
+        String cursoid = request.getParameter("cursoid");
         // Obten el objeto session que contiene a las variables con ámbito de sesion
-        HttpSession session = request.getSession();
+
         RequestDispatcher rd;
         String siguiente = null;
 
@@ -52,8 +54,8 @@ public class Control extends HttpServlet {
             case "cursos":
                 siguiente = "VerCursos";
                 break;
-            case "agregarAnalisis":
-                siguiente = "capturaCveAnalisis.jsp";
+            case "listaHorarios":
+                siguiente = "Cursos?tarea=listaHorarios"; 
                 break;
             case "listaProductos":
                 siguiente = "ObtenProductos";
@@ -84,16 +86,16 @@ public class Control extends HttpServlet {
                 break; 
             case "despliegaInventarioReactivos":
                 siguiente = "ObtenInventarioReactivos";
-                break;  
+                break;   
             default:
                 break;
         }
 
         // Obten el objeto RequestDispatcher
         rd = request.getRequestDispatcher(siguiente);
-        
+
         // Redirecciona a la página JSP siguiente
-        rd.forward(request, response);
+        rd.forward(request, response); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -14,7 +14,7 @@ String email=(String)session.getAttribute("email");
 
 //redirect user to home page if already logged in
 if(email!=null){
-    response.sendRedirect("Bienvenido.jsp");
+    response.sendRedirect("Panel");
 }
 
 String status=request.getParameter("status");

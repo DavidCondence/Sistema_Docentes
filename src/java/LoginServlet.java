@@ -28,38 +28,26 @@ public class LoginServlet extends HttpServlet {
     } 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
-        String email=request.getParameter("email");
-        String password=request.getParameter("password");
         Usuario dao=new Usuario();
-        BeanUsuario bu = new BeanUsuario();
-        bu.setEmail(email);
-        bu.setPassword(password); 
+    
+        PrintWriter out = response.getWriter();
+        
+        String email = request.getParameter("email");
+        String pass = request.getParameter("password");
+        
         try {
-            if(dao.userLogin(bu) != null) {
-                HttpSession session=request.getSession();
-                
-                ResultSet rs = dao.userLogin(bu).executeQuery();
-                String executedQuery = rs.getStatement().toString(); 
-                while (rs.next()) {
-                    if (rs.getBoolean("Admin") == true) {
-                        System.out.println("es admin");
-                        session.setAttribute("admin",rs.getBoolean("Admin")); 
-                    } else {
-                        System.out.println("No es admin");
-                    }
-                }
-                session.setAttribute("email",email); 
-                response.sendRedirect("Bienvenido.jsp");
-            }else {
-                HttpSession session=request.getSession();
-                session.invalidate();
+            HttpSession session=request.getSession();
+            if(dao.userLogin(email, pass)) {
+                session.setAttribute("email",email);
+                session.setAttribute("admin",true);
+                response.sendRedirect("Panel");
+            }  else {
                 request.setAttribute("errorMessage", "Algún campo incorrecto.");
-                
-                RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-                rd.forward(request, response); 
-            }
+                RequestDispatcher rs = request.getRequestDispatcher("index.jsp");
+                rs.include(request, response);
+            } 
         } catch (SQLException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     } 
 }

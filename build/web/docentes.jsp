@@ -220,10 +220,10 @@
                     dateParsing: true,
                     processHtml: function(row, key) {
                         if (key === 'avatar_url') {
-                            return '<a href="' + row[key] + '" target="_blank">View Avatar</a>'
+                            return '<a href="' + row[key] + '">View Avatar</a>'
                         }
                         if (key === 'url') {
-                            return '<a href="#" target="_blank">Eliminar</a>'
+                            return '<a href="#">Eliminar</a>'
                         }
                         if (key === 'site_admin' && row[key]) {
                             return '<span class="btn btn-warning btn-sm">Admin</span>'
