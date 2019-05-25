@@ -3,7 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/David/Desktop/Final/HolaMundo/web/index.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/jspf/menu.jspf</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/crearhorario.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/Usuarios.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/Panel.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/inscritos.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/modelo/Usuario.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/jspf/new.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/Cursos.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/cursos.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/Servlets/Control.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/usuarios.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/index.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/docentes.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/modelo/Cursos.java</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/crearcurso.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/horarios.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/logout.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/web/home.jsp</file>
+            <file>file:/C:/Users/David/Desktop/Sistema_Docentes/src/java/VerCursos.java</file>
         </group>
     </open-files>
 </project-private>

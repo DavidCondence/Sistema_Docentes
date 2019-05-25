@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-header">
+               Últimos docentes registrados
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th class="text-center">#</th>
+                        <th>Name</th>
+                        <th class="text-center">City</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody> 
+                        <c:forEach var="docente" items="${lista}">
+                                <tr>
+                                        <td><c:out value="${docente.email}"/></td>
+                                        <td><c:out value="${docente.nombre}"/></td>  				
+                                </tr>
+                        </c:forEach>
+                      
+                    </tbody>
+                </table>
+            </div>
+            <!--
+            <div class="d-block text-center card-footer">
+                <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                <button class="btn-wide btn btn-success">Save</button>
+            </div>
+            -->
+        </div>
+    </div>
+</div> 
